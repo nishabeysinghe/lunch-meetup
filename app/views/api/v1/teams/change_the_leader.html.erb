@@ -1,0 +1,53 @@
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Here Is The New Leader of The Team!
+    </span> 
+  </div>
+</nav>
+
+<br/>
+<br/>
+
+ <%= form_tag change_the_leader_api_v1_teams_path, { controller: 'teams_controller', action: 'change_the_leader', method: :get } do %>
+  <%= label_tag  "Enter the Team ID:" %>
+  <%= text_field_tag :team_id, params[:team_id] %>
+  <%= submit_tag 'Change the Leader' ,name: nil %>
+<% end %>
+
+<br/>
+<br/>
+
+<table class="table table-hover table-bordered ">
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Employee ID</th>
+        <th>Department</th>
+        <th>Attending Lunch</th>
+        <th>Is Leader</th>
+        <th>Email</th>
+
+    </tr>
+</thead>
+
+<tbody>
+    <%if !@leader.nil?%>
+
+    <%  @leader.each do |leader| %>  
+    <tr>                  
+        <td><%= leader.name %></td>
+        <td><%= leader.emp_id %></td>
+        <td><%= leader.department %></td>
+        <td><%= leader.attending_lunch %></td>
+        <td><%= leader.is_leader %></td>
+        <td><%= leader.email %></td>
+
+    </tr>
+    <% end %> 
+ <% end %> 
+ 
+</tbody>
+
+
+</table> 

@@ -1,0 +1,40 @@
+
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-text">
+       New Leaders for the week!
+    </span>
+  </div>
+</nav>
+
+<table class="table table-hover table-bordered ">
+<thead>
+    <tr>
+     <th>Name</th>
+    <th>Employee ID</th>
+    <th>Department</th>
+    <th>Attending Lunch</th>
+    <th>Is Leader</th>
+    <th>Email</th>
+    <th>Team</th>
+    </tr>
+</thead>
+
+<tbody>
+    <% @leaders.each do |leader| %>  
+    <tr>                  
+         <td><%= leader.name %></td>
+        <td><%= leader.emp_id %></td>
+        <td><%= leader.department %></td>
+        <td><%= leader.attending_lunch %></td>
+        <td><%= leader.is_leader %></td>
+        <td><%= leader.email %></td>
+        <td><%= leader.teams.last.name %></td>
+        
+        </td>
+    </tr>
+    <% end %> 
+</tbody>
+
+
+</table> 

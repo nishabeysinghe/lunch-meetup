@@ -1,0 +1,32 @@
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      All Blind Dates
+    </span>
+  </div>
+</nav>
+
+<table class="table table-hover table-bordered ">
+<thead>
+    <tr>
+     <th>Blindate ID</th>
+    <th>Employee ID</th>
+    <th>Team ID</th>
+    <th>Created At</th>
+    </tr>
+</thead>
+
+<tbody>
+    <%  @blind_dates.each do |date| %>  
+    <tr>                  
+         <td><%= date.id %></td>
+        <td><%= date.employee_id %></td>
+        <td><%= date.team_id %></td>
+        <td><%= date.created_at %></td>
+        </td>
+    </tr>
+    <% end %> 
+</tbody>
+
+
+</table> 

@@ -1,0 +1,54 @@
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Enter Your Availability Here!
+    </span>
+  </div>
+</nav>
+
+<br/>
+<br/>
+
+ <%= form_tag enter_availability_api_v1_employees_path, { controller: 'employees_controller', action: 'show', method: :get } do %>
+   <%= label_tag  "Enter Availability for this weeks lunch - YES/NO" %>
+   <%= text_field_tag :attending_lunch, params[:attending_lunch] %>
+   <%= label_tag  "Enter Employee ID" %>
+   <%= text_field_tag :emp_id, params[:emp_id] %>
+   <br/>
+  <%= submit_tag 'Get New Record' ,name: nil %>
+<% end %>
+
+<br/>
+<br/>
+
+<table class="table table-hover table-bordered ">
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Employee ID</th>
+        <th>Department</th>
+        <th>Attending Lunch</th>
+        <th>Is Leader</th>
+        <th>Email</th>
+
+    </tr>
+</thead>
+
+<tbody>
+    <%if !@employee.nil?%>
+
+    <tr>                  
+        <td><%= @employee.name %></td>
+        <td><%= @employee.emp_id %></td>
+        <td><%= @employee.department %></td>
+        <td><%= @employee.attending_lunch %></td>
+        <td><%= @employee.is_leader %></td>
+        <td><%= @employee.email %></td>
+
+    </tr>
+ <% end %> 
+ 
+</tbody>
+
+
+</table> 

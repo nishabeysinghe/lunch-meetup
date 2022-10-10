@@ -1,0 +1,45 @@
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      Find All Blind Dates of Employee Below. Make sure to enter the ID of the employee. Not the Emp ID which is your DataGuard ID
+    </span> 
+  </div>
+</nav>
+
+<br/>
+<br/>
+
+ <%= form_tag employee_blind_date_api_v1_blind_dates_path, { controller: 'blind_dates_controller', action: 'show', method: :get } do %>
+   <%= label_tag  "Enter the Employee ID:" %>
+   <%= text_field_tag :employee_id, params[:employee_id] %>
+  <%= submit_tag 'Get Blind Dates' ,name: nil %>
+<% end %>
+
+<br/>
+<br/>
+
+<table class="table table-hover table-bordered ">
+<thead>
+    <tr>
+     <th>Blindate ID</th>
+    <th>Employee ID</th>
+    <th>Team ID</th>
+    <th>Created At</th>
+    </tr>
+</thead>
+
+<tbody>
+    <%  @employee_blind_date.each do |date| %>  
+    <tr>                  
+         <td><%= date.id %></td>
+        <td><%= date.employee_id %></td>
+        <td><%= date.team_id %></td>
+        <td><%= date.created_at %></td>
+        </td>
+    </tr>
+    <% end %> 
+</tbody>
+
+
+</table> 
+

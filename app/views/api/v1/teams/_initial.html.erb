@@ -1,0 +1,8 @@
+<nav class="navbar bg-light">
+  <form class="container-fluid justify-content-start">
+    <button class="btn btn-outline-success me-2"><%= link_to 'Create New Teams for the week/Show Leaders' , create_teams_and_get_new_team_leads_api_v1_teams_path%></button>
+    <button class="btn btn-outline-success me-2"><%= link_to 'Show All Blind Dates', api_v1_blind_dates_path %></button>
+    <button class="btn btn-outline-success me-2"><%= link_to 'Show All Blind Dates of An employee', employee_blind_date_api_v1_blind_dates_path  %></button>
+    <button class="btn btn-outline-success me-2"><%= link_to 'Change the leader of a team', change_the_leader_api_v1_teams_path %></button>
+  </form>
+</nav>
