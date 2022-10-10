@@ -78,6 +78,11 @@ module Api
             def generate_teams_and_members
                 #order by department so that employees of the same department will be spread to teams 
                 #assumption  -  each team consists of 5 members 
+                
+                #explanation for below destroy all call --> assuming that this function only gets called when the commented out conditions of create_teams_and_get_new_team_leads()
+                #satsisfies , here the teams that are being created from Monday 12am -10am period  will be not saved, to prevent 
+                #from having multiple saved teams for a single week .
+                
                 Team.where(Team.arel_table[:created_at].gt(DateTime.now.midnight)).destroy_all
                 @employees = Employee.where(attending_lunch: true).order(:department)
                 @employees_in_groups = @employees.shuffle.to_a.in_groups_of(5)
