@@ -59,13 +59,15 @@ module Api
 
             def create_teams_and_get_new_team_leads
                 ##with the assumption that teams can only be assigned before 10am every Monday
-                if Date.today.strftime("%A") == "Monday" &&   DateTime.now.strftime("%H") < "10"
+                 #commenting rest of the code for evaluation purpose
+
+                #if Date.today.strftime("%A") == "Monday" &&   DateTime.now.strftime("%H") < "10"
                     generate_teams_and_members()
-                else
-                    @leaders = get_leaders()
-                    flash[:notice] = 'You can only create teams before 10am every Monday'
+                #else
+                   #@leaders = get_leaders()
+                    #flash[:notice] = 'You can only create teams before 10am every Monday'
                     # render json: {status: 'ERROR', message: 'You can only create teams before 10am every Monday'}, status: :unprocessable_entity
-                end       
+                #end       
                  
             end    
 
