@@ -38,9 +38,9 @@
 Rails version - 7.0.4
 Ruby verison - 3.1
 
-bundle install
-rails db:migrate
-rake db:seed
+- bundle install
+- rails db:migrate
+- rake db:seed
 
 **Can view the system from here**
 route to HR Dashboard api/v1/teams
