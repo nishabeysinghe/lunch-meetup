@@ -1,24 +1,46 @@
-# README
+# **Lunch Group App**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## **This projects consists of below functionalities**
 
-Things you may want to cover:
+- There are two Dashboards which you can access as Employees and HR personal.
+- View all created teams for this week.
 
-* Ruby version
+## **HR Dashboard**
+- View the list of leaders
+- Create new teams 
+- Change the leader of a team
+- Show all blind dates of all employees
+- Filter blind dates of a single employee
 
-* System dependencies
+## **Employee Dahsboard**
+- Edit lunch availability for the week
+- View your assigned team 
+- View All blind  dates You have attened
 
-* Configuration
 
-* Database creation
+## **Assumptions**
 
-* Database initialization
+- Each team consists of 5 members
+- HR personnel has the ability to manage teams .
+- Each week before Monday 10am teams should be created.
+- After that you only can view. 
+- Some of the code snippets are commented out -> explanations are given
+- Exposed APIs are also commented out. 
 
-* How to run the test suite
+## **Improvements and further work**
+-  Tests are only being written for models
+-  Authentication with devise should be implemented, Due to this employee signup is not there, Hence the seed file is used to add
+ employees to the system.
+- Use of partials should have become handy. 
+ 
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+Rails version - 7.0.4
+Ruby verison - 3.1
 
-* ...
+bundle install
+rails db:migrate
+rake db:seed
+
+**Can view the system from here**
+route to HR Dashboard api/v1/teams
